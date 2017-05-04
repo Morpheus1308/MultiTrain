@@ -38,6 +38,6 @@ class Bar{
    fill(255);
    text(counter,width-50, statusNumber-4);
    //line(startPos.x, startPos.y, endPos.x, endPos.y);
-     
+   text(game.val, 20, 20);
    }
  }

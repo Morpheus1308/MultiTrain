@@ -20,10 +20,79 @@ void setup(){
 
 void draw(){
   
+  //switch(gameMode){
+  // case 0:
+  //  start.update();
+  //  start.render();
+  //  break;
+  // case 1:
+  //  if(game == null){
+  //    game = new Game(1);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  // case 2:
+  //   if(game == null){
+  //    game = new Game(2);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  //  case 3:
+  //   if(game == null){
+  //    game = new Game(3);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  //  case 4:
+  //   if(game == null){
+  //    game = new Game(4);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  //  case 5:
+  //   if(game == null){
+  //    game = new Game(5);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  //  case 6:
+  //   if(game == null){
+  //    game = new Game(6);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  //  case 7:
+  //   if(game == null){
+  //    game = new Game(7);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  //  case 8:
+  //   if(game == null){
+  //    game = new Game(8);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  //  case 9:
+  //   if(game == null){
+  //    game = new Game(9);
+  //    } else{
+  //      game.update();
+  //      game.render();
+  //      }
+  //}
   
   if(gameMode == 0){
-    start.update();
-    start.render();
+   start.update();
+   start.render();
   } else if (gameMode == 1){
     if(game == null){
     game = new Game(2);
@@ -31,7 +100,7 @@ void draw(){
       game.update();
       game.render();
       }
- }  
+   }  
 }
 
 void mousePressed(){

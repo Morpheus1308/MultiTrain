@@ -4,6 +4,7 @@ class Screen{
  int next;
  float[] position = new float[9];
  color[] col = new color[9]; 
+ int[] colorNumber = new int[9];
  
   Screen(){
     
@@ -13,6 +14,7 @@ class Screen{
     bg.update();
     hover();
     clicked();
+    buttons();
   }
   
   void render(){
@@ -50,8 +52,7 @@ class Screen{
     } else {
       q = 100;
     }
-    
-    
+
   }
   
   void clicked(){
@@ -64,6 +65,14 @@ class Screen{
     if(mouseX >= width/8 - 50 && mouseX <= width/8 + 50 && mouseY >= (height/4+60) - 25 && mouseY <= (height/4+60) + 25){
       if(state == 1){
         exit();
+      }
+    }
+    
+    for(int i = 0; i < position.length;i++){
+      if(mouseX >= (width/4-20)-15 && mouseX <= (width/4-20)+15 && mouseY >= (height/4-10) +position[i]-15 && mouseY <= (height/4-10) +position[i]+15){
+       if(state == 1){
+        gameMode = i+1; 
+       }
       }
     }
   }
@@ -79,6 +88,10 @@ class Screen{
     col[7] = color(255,0,255);
     col[8] = color(0,0,0);
     
+    for (int i = 0; i < colorNumber.length; i++){
+     colorNumber[i] = 255; 
+    }
+    
     if(next == 1){
       int p = 0;
       for(int j = 0; j < position.length; j++){
@@ -87,14 +100,21 @@ class Screen{
       }
       fill(120);
       rectMode(CENTER);
+      for(int i = 0; i < position.length; i++){
+        if(mouseX >= (width/4-20)-15 && mouseX <= (width/4-20)+15 && mouseY >= (height/4-10) +position[i]-15 && mouseY <= (height/4-10) +position[i]+15){
+        col[i] = color(255,255,255);
+        colorNumber[i] = 0;
+     }
+     }
+    
       
       for(int i = 0; i < position.length; i++){
         fill(col[i]);
-        rect(width/4, height/4 + position[i], 30, 30, 8);
+        rect(width/4-20, (height/4-10) + position[i], 30, 30, 8);
         
-        fill(255);
+        fill(colorNumber[i]);
         textSize(20);
-        text(i+1, width/4, height/4 + position[i]);
+        text(i+1, width/4-20, (height/4-10) + position[i]);
       }
     }
   }
