@@ -2,11 +2,11 @@ import processing.sound.*;
 
   SoundFile colSound, winSound;
   Screen start;
-  
   Game game;
   
   int counter;
-int gameMode = 0;
+  int gameMode = 0;
+  int state = 0;
 
 void setup(){
   size(1000,500);
@@ -33,7 +33,11 @@ void draw(){
       }
  }  
 }
+
 void mousePressed(){
- gameMode ++; 
- counter += 10;
+  state = 1;
+}
+
+void mouseReleased(){
+  state = 0; 
 }
