@@ -3,15 +3,18 @@ import processing.sound.*;
   SoundFile colSound, winSound;
   Screen start;
   Game game;
+  Points score;
   
   int counter;
   int gameMode = 0;
   int state = 0;
 
+
 void setup(){
   size(1000,500);
   //start = new Screen();
   //game = new Game();
+  score = new Points();
   
   colSound = new SoundFile(this, "bubble.WAV");
   winSound = new SoundFile(this, "win.mp3");
@@ -28,6 +31,7 @@ void draw(){
     start.update();
     start.render();
    }
+    score.render();
     break;
    case 1:
     if(game == null){

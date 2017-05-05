@@ -50,6 +50,7 @@ class Game {
     
     if(counter >= val * 50){
       //winSound.play();
+      
       for (int i = 0;i < num.length; i++){
         num[i].location.x = width+20;
         num[i].location.y = height+20;
@@ -63,6 +64,7 @@ class Game {
         phyl.render();
         }  
       if(phyl.r == 220){
+        points += counter;
         start = null;
         game = null;
         phyl = null;

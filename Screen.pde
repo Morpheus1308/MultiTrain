@@ -1,7 +1,10 @@
+  int points = 0;
+
 class Screen{
  BG bg = new BG(255);
  int c, q;
  int next;
+ int points;
  float[] position = new float[9];
  color[] col = new color[9]; 
  int[] colorNumber = new int[9];
@@ -70,15 +73,15 @@ class Screen{
   }
   void buttons(){
     //color
-    col[0] = color(255,0,0);
-    col[1] = color(255,128,0);
-    col[2] = color(255,255,0);
-    col[3] = color(128,255,0);
-    col[4] = color(0,255,255);
-    col[5] = color(0,128,255);
-    col[6] = color(0,0,255);
-    col[7] = color(255,0,255);
-    col[8] = color(0,0,0);
+    col[0] = color(255,0,127);
+    col[1] = color(255,0,255);
+    col[2] = color(0,0,255);
+    col[3] = color(0,128,255);
+    col[4] = color(0,155,155);
+    col[5] = color(0,204,0);
+    col[6] = color(204,204,0);
+    col[7] = color(255,128,0);
+    col[8] = color(255,0,0);
     
     for (int i = 0; i < colorNumber.length; i++){
      colorNumber[i] = 255; 
@@ -105,6 +108,7 @@ class Screen{
         rect(width/4-20, (height/4-10) + position[i], 30, 30, 8);
         
         fill(colorNumber[i]);
+        textAlign(CENTER, CENTER);
         textSize(20);
         text(i+1, width/4-20, (height/4-10) + position[i]);
       }
@@ -123,5 +127,29 @@ class Screen{
    
      fill(255);
      text("Afslut", width/8, height/4+55);
+  }
+}
+
+class Points{
+ 
+  Points(){
+    
+  }
+  
+  void update(){
+    
+  }
+  
+  void render(){
+    pushMatrix();
+     fill(120);
+     rectMode(CENTER);
+     rect(width/8, height/1.18, 150, 50, 10);
+   
+     textAlign(CENTER, CENTER);
+     textSize(20);
+     fill(255);
+     text("Points "+ points, width/8, height/1.18-5);
+    popMatrix();
   }
 }
