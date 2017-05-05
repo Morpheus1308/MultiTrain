@@ -20,7 +20,7 @@ class Game {
         num[i] = new Number(random(width), random(-2000,0), range, 1);
       }  
       bar = new Bar();
-      endTime = millis()+3000;
+      endTime = millis()+60000; //Tiden der går indtil spillet slutter
     }
   
   void update(){
@@ -91,7 +91,7 @@ class Game {
         phyl.render();
         }
       
-      if(phyl.r >= 220){
+      if(phyl.r >= 540){
         gameMode = 0;
         points += counter;
         start = null;

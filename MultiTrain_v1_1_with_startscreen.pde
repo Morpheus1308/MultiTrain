@@ -8,6 +8,7 @@ import processing.sound.*;
   int counter;
   int gameMode = 0;
   int state = 0;
+  PFont font;
 
 
 void setup(){
@@ -15,6 +16,7 @@ void setup(){
   //start = new Screen();
   //game = new Game();
   score = new Points();
+  font = createFont("Arciform.otf", 32);
   
   colSound = new SoundFile(this, "bubble.WAV");
   winSound = new SoundFile(this, "win.mp3");

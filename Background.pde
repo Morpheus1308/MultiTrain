@@ -53,6 +53,6 @@ class Particle{
     noStroke();
     fill(col);
     rectMode(CENTER);
-    rect(location.x, location.y, size/2, size/2);
+    ellipse(location.x, location.y, size/2, size/2);
   }
 }

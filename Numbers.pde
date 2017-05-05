@@ -32,7 +32,7 @@ class Number{
   
   void colision(){
     PVector colision = PVector.sub(body.location, location);
-    if(colision.x <= body.size && colision.x >= -body.size && colision.y <= body.size && colision.y >= -body.size){
+    if(colision.x <= body.size-20 && colision.x >= -body.size+20 && colision.y <= body.size-20 && colision.y >= -body.size+20){
         if(n % game.val == 0){
         counter += n;
         location.x = random(width);

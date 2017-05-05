@@ -17,9 +17,17 @@ void update(){
 }
 
 void render(){
-  fill(0);
-  rectMode(CENTER);
-  rect(location.x,location.y, size, size);
+  pushMatrix();
+    translate(location.x, location.y);
+    rotate(-PI/8);
+    stroke(8);
+    strokeWeight(8);
+    fill(120,200);
+    arc(0, 0, size, size, 0, PI+QUARTER_PI, OPEN);
+  popMatrix();
+  //fill(0);
+  //rectMode(CENTER);
+  //rect(location.x,location.y, size, size);
   
 }
   

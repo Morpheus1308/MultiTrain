@@ -25,11 +25,6 @@ class Phyllotaxis{
       float y = r * sin(a);
       col = r % 256;
       fill(col , 255, 255);
-      if(r >= 255){
-        r = 255;
-        fill(255);
-        noStroke();
-      }
       ellipse(x,y,5,5);
       n += 10;
       

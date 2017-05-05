@@ -142,12 +142,13 @@ class Points{
   
   void render(){
     pushMatrix();
+      textFont(font);
      fill(120);
      rectMode(CENTER);
      rect(width/8, height/1.18, 150, 50, 10);
    
      textAlign(CENTER, CENTER);
-     textSize(20);
+     textSize(25);
      fill(255);
      text("Points "+ points, width/8, height/1.18-5);
     popMatrix();
