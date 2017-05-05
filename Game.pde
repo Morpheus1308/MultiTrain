@@ -6,6 +6,7 @@
   BG bg;
 class Game {
   int val = 0;
+  long endTime;
     Game(int setValue){
       val = setValue;
       body = new Player(width/2, height-60);
@@ -19,6 +20,7 @@ class Game {
         num[i] = new Number(random(width), random(-2000,0), range, 1);
       }  
       bar = new Bar();
+      endTime = millis()+3000;
     }
   
   void update(){
@@ -31,7 +33,7 @@ class Game {
   }
   
   void render(){
-    if(counter < val * 50){
+    if(counter < val * 50 && endTime > millis()){
       background(255);
       bg.render();
     }
@@ -71,6 +73,33 @@ class Game {
         counter = 0;
         frameRate(60);
         gameMode = 0;
+        colorMode(RGB); // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
+        
+      }
+    }
+    if(endTime <= millis()){
+      for (int i = 0;i < num.length; i++){
+        num[i].location.x = width+20;
+        num[i].location.y = height+20;
+      }
+      body.location.x = width+100;
+      body.location.y = height+100;
+      frameRate(255);
+      if (phyl == null){
+        phyl = new Phyllotaxis(140,3);
+      } else {
+        phyl.render();
+        }
+      
+      if(phyl.r >= 220){
+        gameMode = 0;
+        points += counter;
+        start = null;
+        game = null;
+        phyl = null;
+        counter = 0;
+        frameRate(60);
+        
         colorMode(RGB); // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
         
       }
