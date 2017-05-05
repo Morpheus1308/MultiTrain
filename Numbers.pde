@@ -39,7 +39,15 @@ class Number{
         location.y = random(-2000,0);
         velocity.normalize();
         col = true;
-      }
+        } else{
+            if(counter > 0){
+              counter -= n;
+              location.x = random(width);
+              location.y = random(-2000,0);
+              velocity.normalize();
+              col = true;
+            }
+        }
     }
   }
   
