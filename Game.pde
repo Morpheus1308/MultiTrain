@@ -15,8 +15,8 @@ class Game {
       textFont(f,25);
       textAlign(CENTER);
       for (int i = 0; i < num.length; i++){
-        int c = int(random(val * 10));
-        num[i] = new Number(random(width), random(-2000,0), c, 1);
+        int range = int(random(val * 10));
+        num[i] = new Number(random(width), random(-2000,0), range, 1);
       }  
       bar = new Bar();
     }
@@ -52,7 +52,7 @@ class Game {
       //winSound.play();
       for (int i = 0;i < num.length; i++){
         num[i].location.x = width+20;
-        num[i].location.y= height+20;
+        num[i].location.y = height+20;
       }
       body.location.x = width+100;
       body.location.y = height+100;
@@ -62,13 +62,14 @@ class Game {
       } else {
         phyl.render();
         }  
-      if(phyl.r == 180){
-        phyl = null;
+      if(phyl.r == 220){
         start = null;
-        gameMode = 0;
         game = null;
-        frameRate(60);
+        phyl = null;
         counter = 0;
+        frameRate(60);
+        gameMode = 0;
+        colorMode(RGB); // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
         
       }
     }

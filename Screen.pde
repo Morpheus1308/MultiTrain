@@ -7,14 +7,18 @@ class Screen{
  int[] colorNumber = new int[9];
  
   Screen(){
-    
+    for(int i = 0; i < position.length;i++){
+     position[i] = 0;
+     col[i] = 0;
+     colorNumber[i] = 0;
+    }
   }
   
   void update(){
     bg.update();
     hover();
     clicked();
-    buttons();
+    //buttons();
   }
   
   void render(){
@@ -24,20 +28,7 @@ class Screen{
    
    
    
-   fill(0, c, 0);
-   rectMode(CENTER);
-   rect(width/8, height/4, 150, 50, 10);
    
-   textAlign(CENTER, CENTER);
-   textSize(32);
-   fill(255);
-   text("Start", width/8, height/4-5);
-   
-   fill(q, 0, 0);
-   rect(width/8, height/4 + 60, 150, 50, 10);
-   
-   fill(255);
-   text("Afslut", width/8, height/4+55);
   }
   
   void hover(){
@@ -72,6 +63,7 @@ class Screen{
       if(mouseX >= (width/4-20)-15 && mouseX <= (width/4-20)+15 && mouseY >= (height/4-10) +position[i]-15 && mouseY <= (height/4-10) +position[i]+15){
        if(state == 1){
         gameMode = i+1; 
+        next = 0;
        }
       }
     }
@@ -117,5 +109,19 @@ class Screen{
         text(i+1, width/4-20, (height/4-10) + position[i]);
       }
     }
+     fill(0, c, 0);
+     rectMode(CENTER);
+     rect(width/8, height/4, 150, 50, 10);
+   
+     textAlign(CENTER, CENTER);
+     textSize(32);
+     fill(255);
+     text("Start", width/8, height/4-5);
+     
+     fill(q, 0, 0);
+     rect(width/8, height/4 + 60, 150, 50, 10);
+   
+     fill(255);
+     text("Afslut", width/8, height/4+55);
   }
 }
