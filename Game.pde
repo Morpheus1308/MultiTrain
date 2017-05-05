@@ -62,12 +62,14 @@ class Game {
       } else {
         phyl.render();
         }  
-      if(phyl.r == 120){
+      if(phyl.r == 180){
         phyl = null;
+        start = null;
         gameMode = 0;
         game = null;
         frameRate(60);
         counter = 0;
+        
       }
     }
   }

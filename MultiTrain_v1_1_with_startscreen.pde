@@ -10,7 +10,7 @@ import processing.sound.*;
 
 void setup(){
   size(1000,500);
-  start = new Screen();
+  //start = new Screen();
   //game = new Game();
   
   colSound = new SoundFile(this, "bubble.WAV");
@@ -20,87 +20,100 @@ void setup(){
 
 void draw(){
   
-  //switch(gameMode){
-  // case 0:
-  //  start.update();
-  //  start.render();
-  //  break;
-  // case 1:
-  //  if(game == null){
-  //    game = new Game(1);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  // case 2:
-  //   if(game == null){
-  //    game = new Game(2);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  //  case 3:
-  //   if(game == null){
-  //    game = new Game(3);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  //  case 4:
-  //   if(game == null){
-  //    game = new Game(4);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  //  case 5:
-  //   if(game == null){
-  //    game = new Game(5);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  //  case 6:
-  //   if(game == null){
-  //    game = new Game(6);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  //  case 7:
-  //   if(game == null){
-  //    game = new Game(7);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  //  case 8:
-  //   if(game == null){
-  //    game = new Game(8);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  //  case 9:
-  //   if(game == null){
-  //    game = new Game(9);
-  //    } else{
-  //      game.update();
-  //      game.render();
-  //      }
-  //}
-  
-  if(gameMode == 0){
-   start.update();
-   start.render();
-  } else if (gameMode == 1){
+  switch(gameMode){
+   case 0:
+   if(start == null){
+     start = new Screen();
+   } else{
+    start.update();
+    start.render();
+   }
+    break;
+   case 1:
     if(game == null){
-    game = new Game(2);
-    } else{
-      game.update();
-      game.render();
-      }
-   }  
+      game = new Game(1);
+      } else{
+        game.update();
+        game.render();
+        }
+      break;
+   case 2:
+     if(game == null){
+      game = new Game(2);
+      } else{
+        game.update();
+        game.render();
+        }
+        break;
+    case 3:
+     if(game == null){
+      game = new Game(3);
+      } else{
+        game.update();
+        game.render();
+        }
+        break;
+    case 4:
+     if(game == null){
+      game = new Game(4);
+      } else{
+        game.update();
+        game.render();
+        }
+        break;
+    case 5:
+     if(game == null){
+      game = new Game(5);
+      } else{
+        game.update();
+        game.render();
+        }
+        break;
+    case 6:
+     if(game == null){
+      game = new Game(6);
+      } else{
+        game.update();
+        game.render();
+        }
+        break;
+    case 7:
+     if(game == null){
+      game = new Game(7);
+      } else{
+        game.update();
+        game.render();
+        }
+        break;
+    case 8:
+     if(game == null){
+      game = new Game(8);
+      } else{
+        game.update();
+        game.render();
+        }
+        break;
+    case 9:
+     if(game == null){
+      game = new Game(9);
+      } else{
+        game.update();
+        game.render();
+        }
+        break;
+  }
+  
+  //if(gameMode == 0){
+  // start.update();
+  // start.render();
+  //} else if (gameMode == 1){
+  //  if(game == null){
+  //  game = new Game(2);
+  //  } else{
+  //    game.update();
+  //    game.render();
+  //    }
+  // }  
 }
 
 void mousePressed(){
