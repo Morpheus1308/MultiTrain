@@ -1,5 +1,3 @@
-import processing.sound.*;
-
 class Number{
   PVector location, velocity, acceleration;
   float size;

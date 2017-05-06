@@ -1,6 +1,7 @@
 class BG{
   Particle[][] dots;
   int col;
+
   
   BG(int setColor){
     col = setColor;
@@ -8,7 +9,7 @@ class BG{
     for (int i = 0; i < height/10; i++){
       for (int j = 0; j < width/40; j++){
         //for (int k = 0; k < dots.length; k++){
-           dots[i][j] = new Particle(i*30, j*30, 2, col);
+           dots[i][j] = new Particle(i*30, j*30, 30, col);
         //}
       }
     }
@@ -33,9 +34,10 @@ class BG{
 
 class Particle{
   PVector location;
-  float size, r;
+  float size, r, curSize;
   float t;
   int col;
+
   
   Particle(float setX,float setY,float setSize, int setColor){
     col = setColor;
@@ -46,7 +48,7 @@ class Particle{
   void update(){
     t += 0.01;
     r = noise(t);
-    size = map(r, 0,1,1,30);
+    curSize = map(r, 0,1,size*0.1,size);
   }
   
   void render(){
@@ -54,6 +56,6 @@ class Particle{
     //stroke(col, 200);
     fill(col, 100);
     rectMode(CENTER);
-    ellipse(location.x, location.y, size/2, size/2);
+    ellipse(location.x, location.y, curSize/2, curSize/2);
   }
 }

@@ -21,7 +21,7 @@ class Game {
         num[i] = new Number(random(width), random(-val*1000,0), range, 1);
       }  
       bar = new Bar();
-      endTime = millis()+1000; //Tiden der går indtil spillet slutter
+      endTime = millis()+val*30000; //Tiden der går indtil spillet slutter
     }
   
   void update(){
@@ -86,7 +86,7 @@ class Game {
         fill(255);
         text("Congratulations, you reached the highest score", width/2, height/1.2-10);
         text("You reached "+counter+"!", width/2, height/1.2+30);
-        if(phyl.r == 100){
+        if(phyl.r == 40){
         winSound.play();
         }
       if(phyl.r == 220){

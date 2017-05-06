@@ -13,13 +13,10 @@ import processing.sound.*;
 
 void setup(){
   size(1000,500);
-  //start = new Screen();
-  //game = new Game();
   score = new Points(width/7, height/1.18);
   font = createFont("Arciform.otf", 32);
   
   colSound = new SoundFile(this, "bubble.WAV");
-  //winSound = new SoundFile(this, "winning.WAV");
   winSound = new SoundFile(this, "win.mp3");
   timeIsUp = new SoundFile(this, "timeisup.WAV");
 }
@@ -109,18 +106,6 @@ void draw(){
         }
         break;
   }
- 
-  //if(gameMode == 0){
-  // start.update();
-  // start.render();
-  //} else if (gameMode == 1){
-  //  if(game == null){
-  //  game = new Game(2);
-  //  } else{
-  //    game.update();
-  //    game.render();
-  //    }
-  // }  
 }
 
 void mousePressed(){

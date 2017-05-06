@@ -25,9 +25,6 @@ void render(){
     fill(120,200);
     arc(0, 0, size, size, 0, PI+QUARTER_PI, OPEN);
   popMatrix();
-  //fill(0);
-  //rectMode(CENTER);
-  //rect(location.x,location.y, size, size);
   
 }
   
