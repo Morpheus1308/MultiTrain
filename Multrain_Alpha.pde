@@ -9,12 +9,14 @@ import processing.sound.*;
   int gameMode = 0;
   int state = 0;
   PFont font;
+  float dif;
 
 
 void setup(){
-  size(1000,500);
+  size(1500, 750);
   score = new Points(width/7, height/1.18);
   font = createFont("Arciform.otf", 32);
+  dif = 1;
   
   colSound = new SoundFile(this, "bubble.WAV");
   winSound = new SoundFile(this, "win.mp3");
@@ -35,7 +37,7 @@ void draw(){
     break;
    case 1:
     if(game == null){
-      game = new Game(1);
+      game = new Game(1, dif);
       } else{
         game.update();
         game.render();
@@ -43,7 +45,7 @@ void draw(){
       break;
    case 2:
      if(game == null){
-      game = new Game(2);
+      game = new Game(2, dif);
       } else{
         game.update();
         game.render();
@@ -51,7 +53,7 @@ void draw(){
         break;
     case 3:
      if(game == null){
-      game = new Game(3);
+      game = new Game(3, dif);
       } else{
         game.update();
         game.render();
@@ -59,7 +61,7 @@ void draw(){
         break;
     case 4:
      if(game == null){
-      game = new Game(4);
+      game = new Game(4, dif);
       } else{
         game.update();
         game.render();
@@ -67,7 +69,7 @@ void draw(){
         break;
     case 5:
      if(game == null){
-      game = new Game(5);
+      game = new Game(5, dif);
       } else{
         game.update();
         game.render();
@@ -75,7 +77,7 @@ void draw(){
         break;
     case 6:
      if(game == null){
-      game = new Game(6);
+      game = new Game(6, dif);
       } else{
         game.update();
         game.render();
@@ -83,7 +85,7 @@ void draw(){
         break;
     case 7:
      if(game == null){
-      game = new Game(7);
+      game = new Game(7, dif);
       } else{
         game.update();
         game.render();
@@ -91,7 +93,7 @@ void draw(){
         break;
     case 8:
      if(game == null){
-      game = new Game(8);
+      game = new Game(8, dif);
       } else{
         game.update();
         game.render();
@@ -99,7 +101,7 @@ void draw(){
         break;
     case 9:
      if(game == null){
-      game = new Game(9);
+      game = new Game(9, dif);
       } else{
         game.update();
         game.render();

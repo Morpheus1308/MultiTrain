@@ -2,7 +2,8 @@
 
 class Screen{
  BG bg = new BG(255);
- int c, q, colDir;
+ color c, q, w, a, s, d, colDir;
+ boolean ama = false, med = false, adv = false;
  int next;
  int points;
  float[] position = new float[9];
@@ -11,6 +12,7 @@ class Screen{
  float rotation = 0;
  float rotFac = 0, rotFacNeg = 0;
  boolean dir = false;
+ About about;
  
   Screen(){
     for(int i = 0; i < position.length;i++){
@@ -18,6 +20,7 @@ class Screen{
      col[i] = 0;
      colorNumber[i] = 0;
     }
+    about = new About();
   }
   
   void update(){
@@ -37,7 +40,7 @@ class Screen{
    scale(map(mouseY, 0, width, 1, 2));
    icon(0, 0, 300, 200, 8);
    popMatrix();
-   
+   difficulty();
    
   }
   
@@ -52,6 +55,12 @@ class Screen{
      q = 200; 
     } else {
       q = 100;
+    }
+    
+    if(mouseX >= width/8 - 75 && mouseX <= width/8 + 75 && mouseY >= (height/4+120) - 25 && mouseY <= (height/4+120) + 25){
+     w = 200; 
+    } else {
+      w = 100;
     }
     
     if(mouseX >= width/2 && mouseX <= width && mouseY >= 0 - 25 && mouseY <= height){
@@ -74,6 +83,8 @@ class Screen{
       }
     }
     
+    
+    
     for(int i = 0; i < position.length;i++){
       if(mouseX >= (width/4-20)-15 && mouseX <= (width/4-20)+15 && mouseY >= (height/4-10) +position[i]-15 && mouseY <= (height/4-10) +position[i]+15){
        if(state == 1){
@@ -89,6 +100,12 @@ class Screen{
          dir = false;
        }
      }
+     if(mouseX >= width/8 - 50 && mouseX <= width/8 + 50 && mouseY >= (height/4+120) - 25 && mouseY <= (height/4+120) + 25){
+      if(state == 1){
+        next = 2;
+        //counter += 10;
+      }
+    }
   }
   void buttons(){
     //color
@@ -132,26 +149,38 @@ class Screen{
         text(i+1, width/4-20, (height/4-10) + position[i]);
       }
     }
-     fill(0, c, 0);
+     strokeWeight(1);
+     fill(c);
      stroke(255);
      rectMode(CENTER);
      rect(width/8, height/4, 150, 50, 10);
    
      textAlign(CENTER, CENTER);
      textSize(32);
-     fill(255);
+     fill(255-c+50);
      text("Start", width/8, height/4-5);
      
      stroke(255);
-     fill(q, 0, 0);
+     fill(q);
      rect(width/8, height/4 + 60, 150, 50, 10);
    
-     fill(255);
+     fill(255-q+50);
      text("Cancel", width/8, height/4+55);
+     
+     stroke(255);
+     fill(w);
+     rect(width/8, height/4 + 120, 150, 50, 10);
+   
+     fill(255-w+50);
+     text("About", width/8, height/4+115);
      
      fill(colDir);
      textSize(20);
      text("(Hold to change direction)", width-120, height-10);
+     if(next == 2){
+      about.render();
+      about.update();
+    }
   }
   void icon(float setPosX, float setPosY, float setSizeCircle, float setSizeCross, float setStroke ){
     float posX = setPosX;
@@ -200,6 +229,75 @@ class Screen{
    
    popMatrix();
    
+  }
+  void difficulty(){
+    if(next == 1){
+      if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 190) - 15 && mouseY <= (height/4 + 190) + 15){
+        a = 200; 
+      } else {
+        a = 100;
+      }
+      if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 250) - 15 && mouseY <= (height/4 + 250) + 15){
+        s = 200; 
+      } else {
+        s = 100;
+      }
+      if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 310) - 15 && mouseY <= (height/4 + 310) + 15){
+        d = 200; 
+      } else {
+        d = 100;
+      }
+      
+      if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 190) - 15 && mouseY <= (height/4 + 190) + 15){
+        if(state == 1){
+          ama = true;
+          med = false;
+          adv = false;
+          
+        }
+      }
+      if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 250) - 15 && mouseY <= (height/4 + 250) + 15){
+        if(state == 1){
+          ama = false;
+          med = true;
+          adv = false;
+        }
+      }
+      if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 310) - 15 && mouseY <= (height/4 + 310) + 15){
+        if(state == 1){
+          ama = false;
+          med = false;
+          adv = true;
+        }
+      }
+      if(ama == true){
+        a = color(0,204, 0);
+        dif = 1;
+      }
+      if(med == true){
+        s = color(204, 204, 0);
+        dif = 2;
+      }
+      if(adv == true){
+        d = color(255, 0, 0);
+        dif = 3;
+      }
+      noStroke();
+      fill(a);
+      rect(width/3 - 20, height/4 + 190, 150, 30, 6);
+      fill(255);
+      text("Amateur", width/3 - 20, height/4 + 187);
+      
+      fill(s);
+      rect(width/3 - 20, height/4 + 250, 150, 30, 6);
+      fill(255);
+      text("Medium", width/3 - 20, height/4 + 247);
+      
+      fill(d);
+      rect(width/3 - 20, height/4 + 310, 150, 30, 6);
+      fill(255);
+      text("Advanced", width/3 - 20, height/4 + 305);
+    }
   }
 }
 

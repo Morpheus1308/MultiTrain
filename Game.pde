@@ -8,7 +8,9 @@ class Game {
   Points curScore = new Points(70, 20);
   int val = 0;
   long endTime;
-    Game(int setValue){
+  float vel;
+    Game(int setValue, float setVel){
+      vel = setVel;
       val = setValue;
       body = new Player(width/2, height-60);
       num = new Number[val * 50];
@@ -18,7 +20,7 @@ class Game {
       textAlign(CENTER);
       for (int i = 0; i < num.length; i++){
         int range = int(random(val * 10));
-        num[i] = new Number(random(width), random(-val*1000,0), range, 1);
+        num[i] = new Number(random(width), random(-val*1000,0), range, vel);
       }  
       bar = new Bar();
       endTime = millis()+val*30000; //Tiden der går indtil spillet slutter
@@ -129,7 +131,6 @@ class Game {
         }
 
       if(phyl.r >= 240){
-        points += counter;
         start = null;
         game = null;
         counter = 0;
@@ -137,6 +138,23 @@ class Game {
         phyl = null;
         gameMode = 0;
         colorMode(RGB); // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
+      }
+    }
+    fill(100,245);
+    rect(width-width+30, height-20, 70, 30);
+    fill(255);
+    textAlign(CENTER, CENTER);
+    textSize(15);
+    text("Cancel", width-width+30, height-20);
+    if(mouseX >= (width-width+30)-35 && mouseX <=  (width-width+20)+35 && mouseY >= (height-20)-15 && mouseY <= (height-20)+15){
+      if(state == 1){
+        start = null;
+        game = null;
+        counter = 0;
+        frameRate(60);
+        phyl = null;
+        gameMode = 0;
+        colorMode(RGB);
       }
     }
   }
