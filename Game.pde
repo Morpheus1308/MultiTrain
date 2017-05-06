@@ -49,6 +49,11 @@ class Game {
         num[i].col = false;
       }
     }
+    fill(start.col[val-1]);
+    rect(20, 20, 30,30, 8);
+    fill(255);
+    textAlign(CENTER, CENTER);
+    text(val, 20, 17);
     
     if(counter >= val * 50){
       //winSound.play();

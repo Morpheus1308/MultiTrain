@@ -116,6 +116,7 @@ class Screen{
       }
     }
      fill(0, c, 0);
+     stroke(255);
      rectMode(CENTER);
      rect(width/8, height/4, 150, 50, 10);
    
@@ -124,6 +125,7 @@ class Screen{
      fill(255);
      text("Start", width/8, height/4-5);
      
+     stroke(255);
      fill(q, 0, 0);
      rect(width/8, height/4 + 60, 150, 50, 10);
    

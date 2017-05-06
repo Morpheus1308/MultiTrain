@@ -27,6 +27,7 @@ class Number{
     fill(c);
     ellipse(location.x,location.y,size,size);
     fill(255);
+    textAlign(CENTER);
     text(n,location.x,location.y+10); 
   }
   
