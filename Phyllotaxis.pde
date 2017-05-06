@@ -15,6 +15,7 @@ class Phyllotaxis{
   }
   
   void render(){
+    pushMatrix();
       angle = deg * PI/180;
       strokeWeight(0.1);
 
@@ -27,7 +28,7 @@ class Phyllotaxis{
       fill(col , 255, 255);
       ellipse(x,y,5,5);
       n += 10;
-      
+    popMatrix();
   }
   }
   

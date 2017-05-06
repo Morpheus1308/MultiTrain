@@ -59,13 +59,13 @@ class Number{
       c = color(255,128,0);
      }else
        if(n % 7 == 0){
-        c = color(255,255,0);
+        c = color(204,204,0);
        }else
          if(n % 6 == 0){
-          c = color(128,255,0);
+          c = color(0,204,0);
          }else
            if(n % 5 == 0){
-            c = color(0,255,255);
+            c = color(0,155,155);
            }else
              if(n % 4 == 0){
             c = color(0,128,255);
@@ -75,6 +75,9 @@ class Number{
                }else
                  if(n % 2 == 0){
                   c = color(255,0,255);
-                 }
+                 } else 
+                     if(n % 1 == 0){
+                       c = color(255,0,127);
+                     }
    }
   }

@@ -20,7 +20,7 @@ class Game {
         num[i] = new Number(random(width), random(-2000,0), range, 1);
       }  
       bar = new Bar();
-      endTime = millis()+60000; //Tiden der går indtil spillet slutter
+      endTime = millis()+1000; //Tiden der går indtil spillet slutter
     }
   
   void update(){
@@ -61,10 +61,22 @@ class Game {
       body.location.y = height+100;
       frameRate(255);
       if (phyl == null){
-        phyl = new Phyllotaxis(137.8, 2);
+        phyl = new Phyllotaxis(137.3, 2);
       } else {
         phyl.render();
-        }  
+        }
+        
+      pushMatrix();
+        noStroke();
+        rectMode(CENTER);
+        fill(200,20 );
+        rect(width/2, height/1.18, 550, 130, 8);
+      popMatrix();
+        textFont(font);
+        textAlign(CENTER, CENTER);
+        fill(255);
+        text("Congratulations, you reached the highest score", width/2, height/1.2-10);
+        text("You reached "+counter, width/2, height/1.2+30);
       if(phyl.r == 220){
         points += counter;
         start = null;
@@ -86,22 +98,33 @@ class Game {
       body.location.y = height+100;
       frameRate(255);
       if (phyl == null){
-        phyl = new Phyllotaxis(140,3);
+        phyl = new Phyllotaxis(137.7,1);
       } else {
         phyl.render();
         }
-      
-      if(phyl.r >= 540){
-        gameMode = 0;
+      pushMatrix();
+        noStroke();
+        rectMode(CENTER);
+        fill(200,20 );
+        rect(width/2, height/1.18, 550, 130, 8);
+      popMatrix();
+        textFont(font);
+        textAlign(CENTER, CENTER);
+        fill(255);
+        text("Time is up, why don't you try again!", width/2, height/1.2-10);
+        text("You reached "+counter, width/2, height/1.2+30);
+
+      if(phyl.r >= 180){
         points += counter;
         start = null;
         game = null;
-        phyl = null;
         counter = 0;
         frameRate(60);
+        phyl = null;
         
-        colorMode(RGB); // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
-        
+          gameMode = 0;
+
+          colorMode(RGB); // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
       }
     }
   }
