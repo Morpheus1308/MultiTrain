@@ -15,7 +15,7 @@ void setup(){
   size(1000,500);
   //start = new Screen();
   //game = new Game();
-  score = new Points();
+  score = new Points(width/7, height/1.18);
   font = createFont("Arciform.otf", 32);
   
   colSound = new SoundFile(this, "bubble.WAV");

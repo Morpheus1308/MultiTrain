@@ -36,6 +36,7 @@ class Number{
     if(colision.x <= body.size-20 && colision.x >= -body.size+20 && colision.y <= body.size-20 && colision.y >= -body.size+20){
         if(n % game.val == 0){
         counter += n;
+        points += n;
         location.x = random(width);
         location.y = random(-2000,0);
         velocity.normalize();
@@ -43,6 +44,7 @@ class Number{
         } else{
             if(counter > 0){
               counter -= n;
+              points -= n;
               location.x = random(width);
               location.y = random(-2000,0);
               velocity.normalize();

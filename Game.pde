@@ -5,19 +5,20 @@
   Phyllotaxis phyl;
   BG bg;
 class Game {
+  Points curScore = new Points(70, 20);
   int val = 0;
   long endTime;
     Game(int setValue){
       val = setValue;
       body = new Player(width/2, height-60);
-      num = new Number[val * 10];
+      num = new Number[val * 50];
       bg = new BG(0);
       f = createFont("Arial",16,true);
       textFont(f,25);
       textAlign(CENTER);
       for (int i = 0; i < num.length; i++){
         int range = int(random(val * 10));
-        num[i] = new Number(random(width), random(-2000,0), range, 1);
+        num[i] = new Number(random(width), random(-val*1000,0), range, 1);
       }  
       bar = new Bar();
       endTime = millis()+60000; //Tiden der går indtil spillet slutter
@@ -36,8 +37,7 @@ class Game {
     if(counter < val * 50 && endTime > millis()){
       background(255);
       bg.render();
-    }
-    for (int i = 0;i < num.length; i++){
+      for (int i = 0;i < num.length; i++){
       num[i].render();
     }
     body.render();
@@ -50,10 +50,14 @@ class Game {
       }
     }
     fill(start.col[val-1]);
-    rect(20, 20, 30,30, 8);
+    rect(140, 20, 30,30, 8);
     fill(255);
     textAlign(CENTER, CENTER);
-    text(val, 20, 17);
+    text(val, 140, 17);
+    
+    curScore.render();
+    }
+    
     
     if(counter >= val * 50){
       //winSound.play();
@@ -83,7 +87,6 @@ class Game {
         text("Congratulations, you reached the highest score", width/2, height/1.2-10);
         text("You reached "+counter+"!", width/2, height/1.2+30);
       if(phyl.r == 220){
-        points += counter;
         start = null;
         game = null;
         phyl = null;
@@ -126,10 +129,8 @@ class Game {
         counter = 0;
         frameRate(60);
         phyl = null;
-        
-          gameMode = 0;
-
-          colorMode(RGB); // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
+        gameMode = 0;
+        colorMode(RGB); // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
       }
     }
   }

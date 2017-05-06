@@ -51,7 +51,8 @@ class Particle{
   
   void render(){
     noStroke();
-    fill(col);
+    //stroke(col, 200);
+    fill(col, 100);
     rectMode(CENTER);
     ellipse(location.x, location.y, size/2, size/2);
   }
