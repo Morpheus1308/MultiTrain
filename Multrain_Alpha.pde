@@ -1,6 +1,6 @@
 import processing.sound.*;
 
-  SoundFile colSound, winSound;
+  SoundFile colSound, winSound, timeIsUp;
   Screen start;
   Game game;
   Points score;
@@ -19,8 +19,9 @@ void setup(){
   font = createFont("Arciform.otf", 32);
   
   colSound = new SoundFile(this, "bubble.WAV");
+  //winSound = new SoundFile(this, "winning.WAV");
   winSound = new SoundFile(this, "win.mp3");
-  
+  timeIsUp = new SoundFile(this, "timeisup.WAV");
 }
 
 void draw(){

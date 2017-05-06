@@ -21,7 +21,7 @@ class Game {
         num[i] = new Number(random(width), random(-val*1000,0), range, 1);
       }  
       bar = new Bar();
-      endTime = millis()+60000; //Tiden der går indtil spillet slutter
+      endTime = millis()+1000; //Tiden der går indtil spillet slutter
     }
   
   void update(){
@@ -50,17 +50,17 @@ class Game {
       }
     }
     fill(start.col[val-1]);
-    rect(140, 20, 30,30, 8);
+    rect(130, 20, 30,30, 8);
     fill(255);
     textAlign(CENTER, CENTER);
-    text(val, 140, 17);
+    text(val, 130, 17);
     
     curScore.render();
     }
     
     
     if(counter >= val * 50){
-      //winSound.play();
+      
       
       for (int i = 0;i < num.length; i++){
         num[i].location.x = width+20;
@@ -86,6 +86,9 @@ class Game {
         fill(255);
         text("Congratulations, you reached the highest score", width/2, height/1.2-10);
         text("You reached "+counter+"!", width/2, height/1.2+30);
+        if(phyl.r == 100){
+        winSound.play();
+        }
       if(phyl.r == 220){
         start = null;
         game = null;
@@ -121,6 +124,9 @@ class Game {
         fill(255);
         text("Time is up", width/2, height/1.2-10);
         text("You reached "+counter+"!", width/2, height/1.2+30);
+        if(phyl.r == 40){
+         timeIsUp.play(); 
+        }
 
       if(phyl.r >= 240){
         points += counter;
