@@ -9,6 +9,7 @@ class Screen{
  color[] col = new color[9]; 
  int[] colorNumber = new int[9];
  float rotation = 0;
+ float rotFac = 0, rotFacNeg = 0;
  
   Screen(){
     for(int i = 0; i < position.length;i++){
@@ -29,7 +30,7 @@ class Screen{
    background(0);
    bg.render();
    buttons();
-   icon();
+   icon(width/1.5, height/2, 300, 200, 8);
    
    
    
@@ -129,23 +130,47 @@ class Screen{
      fill(255);
      text("Afslut", width/8, height/4+55);
   }
-  void icon(){
+  void icon(float setPosX, float setPosY, float setSizeCircle, float setSizeCross, float setStroke ){
+    float posX = setPosX;
+    float posY = setPosY;
+    float CSize = setSizeCircle;
+    float KSize = setSizeCross;
+    float stroke = setStroke;
    pushMatrix();
-   translate(width/1.5, height/2);
+   translate(posX, posY);
      fill(20,200);
      stroke(255);
-     strokeWeight(8);
-     ellipse(0, 0, 300,300);
+     strokeWeight(stroke);
+     ellipse(0, 0, CSize,CSize);
      //rotate(PI/4);
      if(state == 1){
-      rotation += 0.06; 
+       if(rotFacNeg <= 0){
+         rotFac += 0.0005;
+         rotation += rotFac;
+         if (rotFac >=0.05){
+           rotFac = 0.05; 
+         }
+       }else{
+         rotFacNeg -= 0.0005;
+         rotation -= rotFacNeg;
+        }
+      
      } else {
-      rotation -= 0.06;
+       if(rotFac <= 0){
+         rotFacNeg += 0.0005;
+         rotation -= rotFacNeg;
+         if (rotFacNeg >=0.05){
+           rotFacNeg = 0.05; 
+         }
+       }else{
+         rotFac -= 0.0005;
+         rotation += rotFac;
+        }
      }
      fill(255);
      rotate(rotation);
-     rect(0, 0, map(mouseX, 0, width, 200, 280), map(mouseX, 0, width, 20, 30), 8);
-     rect(0, 0,map(mouseX, 0, width, 20, 30), map(mouseX, 0, width, 200, 280), 8);
+     rect(0, 0, map(mouseX, 0, width, KSize*0.8, KSize*1.2), map(mouseX, 0, width, KSize*0.1, KSize*0.12), 8);
+     rect(0, 0,map(mouseX, 0, width, KSize*0.1, KSize*0.12), map(mouseX, 0, width, KSize*0.8, KSize*1.2), 8);
    
    popMatrix();
    
@@ -165,14 +190,17 @@ class Points{
   void render(){
     pushMatrix();
       textFont(font);
+      strokeWeight(2);
      fill(120);
      rectMode(CENTER);
-     rect(width/8, height/1.18, 150, 50, 10);
+     rect(width/7, height/1.18, 60, 30, 10);
    
      textAlign(CENTER, CENTER);
      textSize(25);
      fill(255);
-     text("Points "+ points, width/8, height/1.18-5);
+     text( points, width/7, height/1.18-4);
+     
+     start.icon(width/8-40, height/1.18,30,20, 2);
     popMatrix();
   }
 }

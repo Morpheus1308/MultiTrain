@@ -20,6 +20,7 @@ class Bar{
  }
  
  void render(){
+   strokeWeight(0);
    rectMode(CORNER);
    fill(0);
    rect(width-40, height, 30, -height, 10);

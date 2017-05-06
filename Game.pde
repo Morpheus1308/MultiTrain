@@ -20,7 +20,7 @@ class Game {
         num[i] = new Number(random(width), random(-2000,0), range, 1);
       }  
       bar = new Bar();
-      endTime = millis()+1000; //Tiden der går indtil spillet slutter
+      endTime = millis()+60000; //Tiden der går indtil spillet slutter
     }
   
   void update(){
@@ -70,13 +70,13 @@ class Game {
         noStroke();
         rectMode(CENTER);
         fill(200,20 );
-        rect(width/2, height/1.18, 550, 130, 8);
+        rect(width/2, height/1.18, 700, 130, 8);
       popMatrix();
         textFont(font);
         textAlign(CENTER, CENTER);
         fill(255);
         text("Congratulations, you reached the highest score", width/2, height/1.2-10);
-        text("You reached "+counter, width/2, height/1.2+30);
+        text("You reached "+counter+"!", width/2, height/1.2+30);
       if(phyl.r == 220){
         points += counter;
         start = null;
@@ -112,7 +112,7 @@ class Game {
         textAlign(CENTER, CENTER);
         fill(255);
         text("Time is up", width/2, height/1.2-10);
-        text("You reached "+counter, width/2, height/1.2+30);
+        text("You reached "+counter+"!", width/2, height/1.2+30);
 
       if(phyl.r >= 240){
         points += counter;
