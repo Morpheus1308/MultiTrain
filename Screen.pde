@@ -8,6 +8,7 @@ class Screen{
  float[] position = new float[9];
  color[] col = new color[9]; 
  int[] colorNumber = new int[9];
+ float rotation = 0;
  
   Screen(){
     for(int i = 0; i < position.length;i++){
@@ -28,7 +29,7 @@ class Screen{
    background(0);
    bg.render();
    buttons();
-   
+   icon();
    
    
    
@@ -127,6 +128,27 @@ class Screen{
    
      fill(255);
      text("Afslut", width/8, height/4+55);
+  }
+  void icon(){
+   pushMatrix();
+   translate(width/1.5, height/2);
+     fill(20,200);
+     stroke(255);
+     strokeWeight(8);
+     ellipse(0, 0, 300,300);
+     //rotate(PI/4);
+     if(state == 1){
+      rotation += 0.06; 
+     } else {
+      rotation -= 0.06;
+     }
+     fill(255);
+     rotate(rotation);
+     rect(0, 0, map(mouseX, 0, width, 200, 280), map(mouseX, 0, width, 20, 30), 8);
+     rect(0, 0,map(mouseX, 0, width, 20, 30), map(mouseX, 0, width, 200, 280), 8);
+   
+   popMatrix();
+   
   }
 }
 

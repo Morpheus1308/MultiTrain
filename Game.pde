@@ -98,7 +98,7 @@ class Game {
       body.location.y = height+100;
       frameRate(255);
       if (phyl == null){
-        phyl = new Phyllotaxis(137.7,1);
+        phyl = new Phyllotaxis(137.1,2);
       } else {
         phyl.render();
         }
@@ -111,10 +111,10 @@ class Game {
         textFont(font);
         textAlign(CENTER, CENTER);
         fill(255);
-        text("Time is up, why don't you try again!", width/2, height/1.2-10);
+        text("Time is up", width/2, height/1.2-10);
         text("You reached "+counter, width/2, height/1.2+30);
 
-      if(phyl.r >= 180){
+      if(phyl.r >= 240){
         points += counter;
         start = null;
         game = null;
