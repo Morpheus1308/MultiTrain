@@ -34,8 +34,8 @@ class Screen{     //class for the start screen
    bg.render();    //rendering the dots
    buttons();
    pushMatrix();    //saving the current coordinate system
-   translate(width/1.5, height/2);    //changing the coordinate system, in order to beeing able to scale the big icon (in the render method in order to avoid manipulating the other uses of the icon
-   scale(map(mouseY, 0, width, 1, 2));    //the scale depends on the mouse Y position
+   translate(width/1.32, height/2);    //changing the coordinate system, in order to beeing able to scale the big icon (in the render method in order to avoid manipulating the other uses of the icon
+   scale(map(mouseY, 0, width, 1, 1.5));    //the scale depends on the mouse Y position
    icon(0, 0, 300, 200, 8);     //initializing the icon with different arguments - position, size of the circle, size of the cross and the stroke
    popMatrix();     //restoring the previous coordinate system
    difficulty();     //rendering the difficulty buttons
@@ -147,34 +147,59 @@ class Screen{     //class for the start screen
         text(i+1, width/4-20, (height/4-10) + position[i]);
       }
     }
+    //the start button
      strokeWeight(1);
      fill(c);
      stroke(255);
      rectMode(CENTER);
-     rect(width/8, height/4, 150, 50, 10);    //the start button
+     rect(width/8, height/4, 150, 50, 10);    
    
      textAlign(CENTER, CENTER);
      textSize(32);
      fill(255-c+50);
      text("Start", width/8, height/4-5);    //the start text
      
+     //the cancel button
      stroke(255);
      fill(q);
-     rect(width/8, height/4 + 60, 150, 50, 10);    //the cancel button
+     rect(width/8, height/4 + 60, 150, 50, 10);    
    
      fill(255-q+50);
      text("Cancel", width/8, height/4+55);    //the cancel text
      
+     //the about button
      stroke(255);
      fill(w);
-     rect(width/8, height/4 + 120, 150, 50, 10);    //the about button
-   
-     fill(255-w+50);
-     text("About", width/8, height/4+115);    //the about text
+     rect(width/8, height/4 + 120, 150, 50, 10);    
      
+     //Instructions manual
+     fill(100, 240);
+     rect(width/2-100, height/3, 500, 170, 8);
+     
+     fill(255);
+     textAlign(LEFT);
+     textSize(40);
+     text("Instructions", width/3-80, height/3-40);
+     textSize(20);
+     fill(220);
+     text("1. Read the rules!", width/3-80, height/3-5);
+     text("2. Press Start.", width/3-80, height/3+20);
+     text("3. Choose the degree of difficulty.",  width/3-80, height/3+45);
+     text("4. Choose the multiplication table you want to learn.",  width/3-80, height/3+70);
+     
+     //about button
+     textSize(32);
+     textAlign(CENTER, CENTER);
+     fill(255-w+50);
+     text("Rules", width/8, height/4+115);    //the about text
+     
+      //the text in the bottom right corner
      fill(colDir);
      textSize(20);
-     text("(Hold to change direction)", width-120, height-10);    //the text in the bottom right corner
+     text("(Hold to change direction)", width-120, height-10);
+     
+     
+     
      if(next == 2){    //checking if the about button has been pressed - if yes, render and update the about page
       about.render();
       about.update();
@@ -233,17 +258,17 @@ class Screen{     //class for the start screen
       if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 190) - 15 && mouseY <= (height/4 + 190) + 15){    //If the mouse is on one of the buttons, change the color of the button
         a = 150; 
       } else {
-        a = 50;
+        a = 70;
       }
       if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 250) - 15 && mouseY <= (height/4 + 250) + 15){
         s = 150; 
       } else {
-        s = 50;
+        s = 70;
       }
       if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 310) - 15 && mouseY <= (height/4 + 310) + 15){
         d = 150; 
       } else {
-        d = 50;
+        d = 70;
       }
       
       if(mouseX >= (width/3 - 20) - 75 && mouseX <= (width/3 - 20) + 75 && mouseY >= (height/4 + 190) - 15 && mouseY <= (height/4 + 190) + 15){    //If on eof the buttons has been pressed, change the booleans of the difficulty to fit the current selection

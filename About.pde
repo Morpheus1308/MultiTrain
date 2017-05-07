@@ -20,14 +20,27 @@ class About{    //Class as a type to define the implementation of the about sect
    
    fill(255);
    textSize(50);
-   textAlign(CENTER,CENTER);    //placing the text in the center
-   text("Hi", width/4+50, height/3);
+   textAlign(LEFT);    //placing the text in the center
+   text("Hi", width/5, height/3);
    
    fill(255);
    textSize(20);
-   textAlign(CENTER,CENTER);
-   text("The purpose of this game is", width/4+50, height/3+70);
-   text("to teach you the multiplication table!", width/4+50, height/3+90);
+   textAlign(LEFT);
+   fill(220);
+   text("The purpose of this game is", width/5, height/3+30);
+   text("to teach you the multiplication table!", width/5, height/3+50);
+   fill(255);
+   textSize(28);
+   text("Rules", width/5, height/3+95);
+   textSize(20);
+   fill(220);
+   text("1.  Capture the numbers fitting to the multiplication table you chose.", width/5, height/3+120);
+   text("2. Avoid those numbers that do not belong to the", width/5, height/3+140);
+   text("multiplication table you chose.", width/5+20, height/3+160);
+   text("3. Get as many points possible!", width/5, height/3+180);
+   text("4. You get the amount of points corresponding to the number you catch.", width/5, height/3+200);
+   text("5. If the number you catch doesn't fit into the multiplication table you chose, ", width/5, height/3+220);
+   text("then you the amount, corresponding to the number you catch, withdrawn.", width/5+20, height/3+240);
    
    rect(width/2+((width/1.2)/2), height/2-((height/1.2)/2), 30,30);
    pushMatrix();                                                            //saves the current coordinate system, while popMatrix restores it later on- used because of the translation

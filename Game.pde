@@ -11,7 +11,7 @@ class Game {
     Game(int setValue, float setVel){     //Constructor wit parameters for multitable and velocity
       vel = setVel;
       val = setValue;
-      body = new Player(width/2, height-60);    //Initializing the player object
+      body = new ArcType(width/2, height-60, 50);    //Initializing the player object
       num = new Number[val * 50];    //initializing the array for the falling numbers with the size of the chosen multitable times 50, e.g. at the table for 1, there will be 50 balls falling down
       bg = new BG(0);      //initializing the background with black dots
       textFont(font,25);
