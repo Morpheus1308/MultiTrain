@@ -18,7 +18,7 @@ public class Phyllotaxis{    //class for the ending animation
   private float col;    //variable used for the color
   private float r;    //radius
   
-  Phyllotaxis(float setDeg, float setC){
+ public Phyllotaxis(float setDeg, float setC){
     deg = setDeg;
     c = setC;
     colorMode(HSB);    //changing the colormode to HSB for a more beautiful result
@@ -26,7 +26,7 @@ public class Phyllotaxis{    //class for the ending animation
     background(255);
   }
   
-  void render(){
+  public void render(){
     pushMatrix();    //saving the current coordinate system to avoid influence on other objects
       angle = deg * PI/180;
       strokeWeight(0.1);

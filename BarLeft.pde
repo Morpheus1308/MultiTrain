@@ -2,7 +2,6 @@ class Bar{    //The class for the status bar, visualizing the status and the cur
  PVector startPos, endPos;    //defining start and end position of the bar
  float status;    //variable for the current status, used for the 
  float statusNumber;    //variable for position of the number
- PFont f;
  
  Bar(){
   startPos = new PVector(width-20, height-20);    //Using vectors to define the start and end position
@@ -25,7 +24,6 @@ class Bar{    //The class for the status bar, visualizing the status and the cur
    fill(255,0,0);
    rect(width-30, height-20, 10, status);    //The red bar
    
-   f = createFont("Arial",16,true);
    textFont(font,25);
    textAlign(CENTER);
    

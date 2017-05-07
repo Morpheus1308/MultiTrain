@@ -1,14 +1,11 @@
-      //Global Attributes
-    
-  
-  
+
   
 class Game {
-  Player body;
-  Number[] num;
-  Phyllotaxis phyl;
-  BG bg;
-  Bar bar;
+  ArcType body;  //playermodel
+  Number[] num;   //array for falling numbers
+  Phyllotaxis phyl;    //the phyllotaxis attribute
+  BG bg;    //background
+  Bar bar;    //scorebar
   Points curScore = new Points(70, 20);    //initializing the scoreboard in the top left
   int val = 0;    //setting the default value of the multiplicatio table to 0;
   long endTime;
