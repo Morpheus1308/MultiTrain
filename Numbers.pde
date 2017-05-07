@@ -35,7 +35,7 @@ class Number{    //class for the falling numbers
     if(collision.x <= game.body.size-20 && collision.x >= -game.body.size+20 && collision.y <= game.body.size-20 && collision.y >= -game.body.size+20){     //if the ball is in the range of the player
         if(n % game.val == 0){     //when the number fits to the mulitplication table, add the value to the counter and the overall points and set the position back to a random place (has to be changed for the real game) and set the collision boolean to true
         counter += n;
-        points += n;
+        score.points += n;
         location.x = random(width);
         location.y = random(-2000,0);
         //velocity.normalize();
@@ -43,7 +43,7 @@ class Number{    //class for the falling numbers
         } else{     //If the number does not fit to the table, subtract the value from the counter and the overall points, while setting the position back to a random place
             if(counter > 0){
               counter -= n;
-              points -= n;
+              score.points -= n;
               location.x = random(width);
               location.y = random(-2000,0);
               //velocity.normalize();
@@ -70,7 +70,7 @@ class Number{    //class for the falling numbers
             c = color(0,155,155);
            }else
              if(n % 4 == 0){
-            c = color(0,128,255);
+              c = color(0,128,255);
              }else
                if(n % 3 == 0){
                 c = color(0,0,255);

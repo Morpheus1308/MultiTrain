@@ -17,9 +17,9 @@ class Bar{    //The class for the status bar, visualizing the status and the cur
  }
  
  void render(){
-   strokeWeight(0);
+   noStroke();
    rectMode(CORNER);
-   fill(0);
+   fill(100);
    rect(width-40, height, 30, -height, 10);    //The black bar
    fill(255,0,0);
    rect(width-30, height-20, 10, status);    //The red bar
@@ -27,7 +27,7 @@ class Bar{    //The class for the status bar, visualizing the status and the cur
    textFont(font,25);
    textAlign(CENTER);
    
-   fill(0);
+   fill(100);
    rectMode(CENTER);
    rect(width-50, statusNumber-10, 40, 40, 10);    //number background
    fill(255,0,0);

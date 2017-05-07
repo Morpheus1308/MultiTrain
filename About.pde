@@ -42,6 +42,14 @@ class About{    //Class as a type to define the implementation of the about sect
    text("5. If the number you catch doesn't fit into the multiplication table you chose, ", width/5, height/3+220);
    text("then you the amount, corresponding to the number you catch, withdrawn.", width/5+20, height/3+240);
    
+   fill(255);
+   textSize(25);
+   text("Hint:", width/5, height/3+280);
+   textSize(20);
+   fill(220);
+   text("The background color of the falling number doesn´t always ", width/5, height/3+300);
+   text("correspond to the chosen muliplication table!", width/5, height/3+320);
+   
    rect(width/2+((width/1.2)/2), height/2-((height/1.2)/2), 30,30);
    pushMatrix();                                                            //saves the current coordinate system, while popMatrix restores it later on- used because of the translation
      translate(width/2+((width/1.2)/2), height/2-((height/1.2)/2));    //Affine Transformation

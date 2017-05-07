@@ -40,7 +40,7 @@ void setup(){   //initiation of the first block of code, only running once
 void draw(){  //Processing specific funktion, running as a loop
   
   switch(gameMode){  //Using the Switch case, in order to differentiate bewteen the screens and game modes
-   case 0:  //defining a group of statements to be executed if a specified value matches the value defined by a preceding "switch" keyword.
+   case 0:  //defining a group of statements to be executed if a specified value matches the value defined by a preceding "switch".
    if(start == null){    //In order to restart the screen with full functionality, I use the null type in the Screen class. 
      start = new Screen(); //initializing the Screen object if there is none
    } else{

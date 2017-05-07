@@ -1,6 +1,4 @@
-  int points = 0;
-
-class Screen{     //class for the start screen
+ class Screen{     //class for the start screen
  BG bg = new BG(255);     //initializing the backgounddots with the color white
  color c, q, w, a, s, d, colDir;    //diffent variables used to change th ecolor of the buttons
  boolean ama = true, med = false, adv = false;     //booleans describing the difficulty
@@ -148,7 +146,7 @@ class Screen{     //class for the start screen
       }
     }
      
-     fill(100);
+     fill(0);
      rectMode(CORNER);
      rect(112, 50, 790, 80, 8);
      
@@ -338,6 +336,7 @@ class Screen{     //class for the start screen
 
 class Points{    //class used to store and visualize the overall points
  float posX, posY;
+ int points = 0;
   Points(float setPosX, float setPosY){    //constructor with the position of the points display
     posX = setPosX;
     posY = setPosY;

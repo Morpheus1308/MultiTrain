@@ -79,7 +79,7 @@ class Game {
         
         noStroke();    //The following segment gives the user information about why the game stopped
         rectMode(CENTER);
-        fill(200,20 );
+        fill(100,20 );
         rect(width/2, height/1.18, 700, 130, 8);
         textFont(font);
         textAlign(CENTER, CENTER);
