@@ -32,9 +32,9 @@
    bg.render();    //rendering the dots
    buttons();
    pushMatrix();    //saving the current coordinate system
-   translate(width/1.32, height/2);    //changing the coordinate system, in order to beeing able to scale the big icon (in the render method in order to avoid manipulating the other uses of the icon
-   scale(map(mouseY, 0, width, 1, 1.5));    //the scale depends on the mouse Y position
-   icon(0, 0, 300, 200, 8);     //initializing the icon with different arguments - position, size of the circle, size of the cross and the stroke
+     translate(width/1.32, height/2);    //changing the coordinate system, in order to beeing able to scale the big icon (in the render method in order to avoid manipulating the other uses of the icon
+     scale(map(mouseY, 0, width, 1, 1.5));    //the scale depends on the mouse Y position
+     icon(0, 0, 300, 200, 8);     //initializing the icon with different arguments - position, size of the circle, size of the cross and the stroke
    popMatrix();     //restoring the previous coordinate system
    difficulty();     //rendering the difficulty buttons
    
@@ -78,8 +78,6 @@
         exit();
       }
     }
-    
-    
     
     for(int i = 0; i < position.length;i++){    //check if one of the mulitplicationtable buttons have been clicked
       if(mouseX >= (width/4-20)-15 && mouseX <= (width/4-20)+15 && mouseY >= (height/4-10) +position[i]-15 && mouseY <= (height/4-10) +position[i]+15){

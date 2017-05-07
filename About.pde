@@ -23,7 +23,7 @@ class About{    //Class as a type to define the implementation of the about sect
    textAlign(LEFT);    //placing the text in the center
    text("Hi", width/5, height/3);
    
-   fill(255);
+   fill(255);     //Rules
    textSize(20);
    textAlign(LEFT);
    fill(220);
