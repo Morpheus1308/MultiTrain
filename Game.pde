@@ -1,9 +1,14 @@
-  Number[] num;    //Global Attributes
-  Player body;  
-  Bar bar;
+      //Global Attributes
+    
+  
+  
+  
+class Game {
+  Player body;
+  Number[] num;
   Phyllotaxis phyl;
   BG bg;
-class Game {
+  Bar bar;
   Points curScore = new Points(70, 20);    //initializing the scoreboard in the top left
   int val = 0;    //setting the default value of the multiplicatio table to 0;
   long endTime;

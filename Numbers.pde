@@ -31,8 +31,8 @@ class Number{    //class for the falling numbers
   }
   
   void collision(){
-    PVector collision = PVector.sub(body.location, location);    //creating new vector by subtracting the position vector of the body from number position vector
-    if(collision.x <= body.size-20 && collision.x >= -body.size+20 && collision.y <= body.size-20 && collision.y >= -body.size+20){     //if the ball is in the range of the player
+    PVector collision = PVector.sub(game.body.location, location);    //creating new vector by subtracting the position vector of the body from number position vector
+    if(collision.x <= game.body.size-20 && collision.x >= -game.body.size+20 && collision.y <= game.body.size-20 && collision.y >= -game.body.size+20){     //if the ball is in the range of the player
         if(n % game.val == 0){     //when the number fits to the mulitplication table, add the value to the counter and the overall points and set the position back to a random place (has to be changed for the real game) and set the collision boolean to true
         counter += n;
         points += n;
