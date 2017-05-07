@@ -12,7 +12,7 @@ Special thanks to..
             ..my teacher Kasper Kristensen, for helping me with the background, including the idea with the double array!
             ..to Daniel Shiffman and his Youtube Channel "Coding Rainbow" for further eduaction in matters of using Arrays and Vectors - Furthermore for his video about Phyllotaxis!
 */
-import processing.sound.*;
+import processing.sound.*;    //Importing a sound Library, in order to use the soundfiles
 
   SoundFile colSound, winSound, timeIsUp;   //Soundfiles, used later in the program
   Screen start;   //variable declaration - start Screen
