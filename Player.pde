@@ -1,4 +1,4 @@
-class Player{    //class for the playermodel, updating the position  - parent for the specifik player classes
+public class Player{    //class for the playermodel, updating the position  - parent for the specifik player classes
   float size;
   float x, y;   //position variables
   PVector location;    //vector to store the location

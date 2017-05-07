@@ -10,13 +10,13 @@ We do that by using the angle and the radius with cosinus and sinus to get the x
 We use a so-called "polar to cartesian coordinate transformation"
 */
 
-class Phyllotaxis{    //class for the ending animation
-  int n = 0;    //describing the angle every loop, the space between each dot created per loop
-  float deg;    // the degree (preferable 137.5 +-0.4)
-  float angle;    //variable used to convert the angle to radians
-  float c;    //describing the distance from one dot to the next
-  float col;    //variable used for the color
-  float r;    //radius
+public class Phyllotaxis{    //class for the ending animation
+  private int n = 0;    //describing the angle every loop, the space between each dot created per loop
+  private float deg;    // the degree (preferable 137.5 +-0.4)
+  private float angle;    //variable used to convert the angle to radians
+  private float c;    //describing the distance from one dot to the next
+  private float col;    //variable used for the color
+  private float r;    //radius
   
   Phyllotaxis(float setDeg, float setC){
     deg = setDeg;
@@ -41,6 +41,9 @@ class Phyllotaxis{    //class for the ending animation
       ellipse(x,y,5,5);
       n += 10;    //the angle per loop
     popMatrix();
+  }
+  public float getR(){    //getter to let other classes use the r variable
+   return r; 
   }
 }
   

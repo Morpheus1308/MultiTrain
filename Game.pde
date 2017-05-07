@@ -85,10 +85,10 @@ class Game {
         text("Congratulations, you reached the highest score", width/2, height/1.2-10);
         text("You reached "+counter+"!", width/2, height/1.2+30);
         
-        if(phyl.r == 40){    //using the phyllotaxis radius as an indicator for when to play the winning sound
+        if(phyl.getR() == 40){    //using the phyllotaxis radius as an indicator for when to play the winning sound
         winSound.play();
         }
-      if(phyl.r == 220){    //using the phyllotaxis radius as an indicator for when to stop the game and go back to the start screen
+      if(phyl.getR() == 220){    //using the phyllotaxis radius as an indicator for when to stop the game and go back to the start screen
         start = null;    //setting every object and vaiable back to null
         game = null;
         phyl = null;
@@ -123,7 +123,7 @@ class Game {
         fill(255);
         text("Time is up", width/2, height/1.2-10);
         text("You reached "+counter+"!", width/2, height/1.2+30);
-        if(phyl.r == 40){
+        if(phyl.getR() == 40){
          timeIsUp.play(); 
         }
 

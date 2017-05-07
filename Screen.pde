@@ -147,6 +147,18 @@ class Screen{     //class for the start screen
         text(i+1, width/4-20, (height/4-10) + position[i]);
       }
     }
+     
+     fill(100);
+     rectMode(CORNER);
+     rect(112, 50, 790, 80, 8);
+     
+     fill(255);
+     textAlign(LEFT);
+     textSize(40);
+     text("MultiTrain", 125, 90);
+     textSize(20);
+     text("Have fun while learning the multiplication table!", 125, 110);
+     
     //the start button
      strokeWeight(1);
      fill(c);
