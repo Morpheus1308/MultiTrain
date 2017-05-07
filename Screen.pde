@@ -144,16 +144,16 @@
       }
     }
      
-     fill(0);
-     rectMode(CORNER);
-     rect(112, 50, 790, 80, 8);
-     
      fill(255);
+     rectMode(CORNER);
+     rect(112, 70, 790, 80, 8);
+     
+     fill(0);
      textAlign(LEFT);
      textSize(40);
-     text("MultiTrain", 125, 90);
+     text("MultiTrain", 125, 110);
      textSize(20);
-     text("Have fun while learning the multiplication table!", 125, 110);
+     text("Have fun while learning the multiplication table!", 125, 130);
      
     //the start button
      strokeWeight(1);
@@ -187,13 +187,13 @@
      fill(255);
      textAlign(LEFT);
      textSize(40);
-     text("Instructions", width/3-80, height/3-40);
+     text("Instructions", width/2-325, height/3-40);
      textSize(20);
      fill(220);
-     text("1. Read the rules!", width/3-80, height/3-5);
-     text("2. Press Start.", width/3-80, height/3+20);
-     text("3. Choose the degree of difficulty.",  width/3-80, height/3+45);
-     text("4. Choose the multiplication table you want to learn.",  width/3-80, height/3+70);
+     text("1. Read the rules!", width/2-325, height/3-5);
+     text("2. Press Start.", width/2-325, height/3+20);
+     text("3. Choose the degree of difficulty.",  width/2-325, height/3+45);
+     text("4. Choose the multiplication table you want to learn.",  width/2-325, height/3+70);
      
      //about button
      textSize(32);
