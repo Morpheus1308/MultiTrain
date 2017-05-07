@@ -1,5 +1,5 @@
-class Phyllotaxis{
-  int n = 0;
+class Phyllotaxis{    //class for the ending animation
+  int n = 0;    //
   float deg;
   float angle;
   float c;

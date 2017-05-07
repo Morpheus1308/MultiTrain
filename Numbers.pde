@@ -1,11 +1,11 @@
-class Number{
-  PVector location, velocity, acceleration;
+class Number{    //class for the falling numbers
+  PVector location, velocity, acceleration;    //attributes for the different vectors
   float size;
-  int n;
+  int n;    //variable for the number
   color c = color(0,0,0);
-  boolean col = false;
+  boolean col = false;    //boolean indicating if there was a collision between a number and the player
   
-  Number(float setX, float setY, int setN, float setSpeedY){
+  Number(float setX, float setY, int setN, float setSpeedY){    //constructor wit parameters for position, number and velocity
     size = 40;
     location = new PVector(setX,setY);
     velocity = new PVector(0, setSpeedY);
@@ -15,11 +15,11 @@ class Number{
   
   void update(){
     //velocity.add(acceleration);
-    location.add(velocity);
-    colision();
+    location.add(velocity);    //Using the vectorfunction "add" to move the falling number
+    collision();    //calling a method to check for collision
   }
   
-  void render(){
+  void render(){    //rendering the falling number
     //noStroke();
     colorChange();
     fill(c);
@@ -30,32 +30,32 @@ class Number{
     text(n,location.x,location.y+10); 
   }
   
-  void colision(){
-    PVector colision = PVector.sub(body.location, location);
-    if(colision.x <= body.size-20 && colision.x >= -body.size+20 && colision.y <= body.size-20 && colision.y >= -body.size+20){
-        if(n % game.val == 0){
+  void collision(){
+    PVector collision = PVector.sub(body.location, location);    //creating new vector by subtracting the position vector of the body from number position vector
+    if(collision.x <= body.size-20 && collision.x >= -body.size+20 && collision.y <= body.size-20 && collision.y >= -body.size+20){     //if the ball is in the range of the player
+        if(n % game.val == 0){     //when the number fits to the mulitplication table, add the value to the counter and the overall points and set the position back to a random place (has to be changed for the real game) and set the collision boolean to true
         counter += n;
         points += n;
         location.x = random(width);
         location.y = random(-2000,0);
-        velocity.normalize();
+        //velocity.normalize();
         col = true;
-        } else{
+        } else{     //If the number does not fit to the table, subtract the value from the counter and the overall points, while setting the position back to a random place
             if(counter > 0){
               counter -= n;
               points -= n;
               location.x = random(width);
               location.y = random(-2000,0);
-              velocity.normalize();
+              //velocity.normalize();
               col = true;
             }
         }
     }
   }
   
-  void colorChange(){
+  void colorChange(){    //method to define the different colors of the bubbles, referencing to tghe multiplicatio table - each of them has their own color, which makes it easier to play 
    if(n % 9 == 0){
-    c = color(255,0,0);
+    c = color(255,0,0);    //going down the table, in order to make the highest numbers easier
    }else
      if(n % 8 == 0){
       c = color(255,128,0);
