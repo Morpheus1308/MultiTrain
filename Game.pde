@@ -97,7 +97,7 @@ class Game {
         counter = 0; 
         frameRate(60);
         gameMode = 0;
-        colorMode(RGB);   // en halv dags arbejde spildt pga. underlige farver efter det foerste spil -.-
+        colorMode(RGB);    //colorMode
         
       }
     }

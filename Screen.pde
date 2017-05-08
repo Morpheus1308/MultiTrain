@@ -78,7 +78,7 @@
         exit();
       }
     }
-    
+    if(next == 1){
     for(int i = 0; i < position.length;i++){    //check if one of the mulitplicationtable buttons have been clicked
       if(mouseX >= (width/4-20)-15 && mouseX <= (width/4-20)+15 && mouseY >= (height/4-10) +position[i]-15 && mouseY <= (height/4-10) +position[i]+15){
        if(state == 1){    //if one has been clicked, check which and set gamemode the the clicked value
@@ -86,6 +86,7 @@
         next = 0;
        }
       }
+    }
     }
     if(state == 1){    //checking if the mouse is beeing clicked - if yes, change direction
        if(dir == false){
@@ -146,14 +147,14 @@
      
      fill(255);
      rectMode(CORNER);
-     rect(112, 70, 790, 80, 8);
+     rect(160, 70, 880, 80, 8);
      
      fill(0);
      textAlign(LEFT);
      textSize(40);
-     text("MultiTrain", 125, 110);
+     text("MultiTrain", 170, 110);
      textSize(20);
-     text("Have fun while learning the multiplication table!", 125, 130);
+     text("Have fun while learning the multiplication table!", 170, 130);
      
     //the start button
      strokeWeight(1);
@@ -182,18 +183,18 @@
      
      //Instructions manual
      fill(100, 240);
-     rect(width/2-100, height/3, 500, 170, 8);
+     rect(width/2-160, height/3-30, 500, 170, 8);
      
      fill(255);
      textAlign(LEFT);
      textSize(40);
-     text("Instructions", width/2-325, height/3-40);
+     text("Instructions", width/2-385, height/3-70);
      textSize(20);
      fill(220);
-     text("1. Read the rules!", width/2-325, height/3-5);
-     text("2. Press Start.", width/2-325, height/3+20);
-     text("3. Choose the degree of difficulty.",  width/2-325, height/3+45);
-     text("4. Choose the multiplication table you want to learn.",  width/2-325, height/3+70);
+     text("1. Read the rules!", width/2-385, height/3-35);
+     text("2. Press Start.", width/2-385, height/3-12);
+     text("3. Choose the degree of difficulty.",  width/2-385, height/3+10);
+     text("4. Choose the multiplication table you want to learn.",  width/2-385, height/3+35);
      
      //about button
      textSize(32);
@@ -203,8 +204,9 @@
      
       //the text in the bottom right corner
      fill(colDir);
-     textSize(20);
-     text("(Hold to change direction)", width-120, height-10);
+     textSize(40);
+     text("(Hold to change direction)", width/1.15, height/1.02);
+     textSize(20); //bugfix
      
      
      

@@ -27,7 +27,8 @@ import processing.sound.*;    //Importing a sound Library, in order to use the s
 
 
 void setup(){   //initiation of the first block of code, only running once
-  size(1500, 750);   //defining the size of the canvas
+  //size(1500, 750);   //defining the size of the canvas
+  fullScreen();
   score = new Points(width/7, height/1.18);   //Using the Points constructor with two arguments, to initialize the points object 
   font = createFont("Arciform.otf", 32);   //defining the font 
   dif = 1;   // setting the difficultz to 1 - which means amateur

@@ -11,7 +11,7 @@ class BG{
     for (int i = 0; i < cols; i++){    //Nested for-loop to create a two dimensional pattern of dots 
       for (int j = 0; j < rows; j++){    //for every collone there is a new row
         //for (int k = 0; k < dots.length; k++){
-           dots[i][j] = new Particle(i*47, j*47, 35, col);    //Creating the array with the particle constructor and parameters for the distance between dots, the size and the color
+           dots[i][j] = new Particle(i*47, j*47, 50, col);    //Creating the array with the particle constructor and parameters for the distance between dots, the size and the color
         //}
       }
     }

@@ -40,7 +40,7 @@ class About{    //Class as a type to define the implementation of the about sect
    text("3. Get as many points possible!", width/5, height/3+180);
    text("4. You get the amount of points corresponding to the number you catch.", width/5, height/3+200);
    text("5. If the number you catch doesn't fit into the multiplication table you chose, ", width/5, height/3+220);
-   text("then you the amount, corresponding to the number you catch, withdrawn.", width/5+20, height/3+240);
+   text("then you get the amount, corresponding to the number you catch, withdrawn.", width/5+20, height/3+240);
    
    fill(255);
    textSize(25);

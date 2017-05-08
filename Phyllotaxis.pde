@@ -1,5 +1,5 @@
 /*
-this part of the code is partially from Daniel Shiffman and his Youtube Channel "Coding Rainbow", where he describes how to make a simple phyllotaxis, what you can change  and so on
+this part of the code is partially from Daniel Shiffman and his Youtube Channel "The Coding Train", where he describes how to make a simple phyllotaxis, what you can change  and so on
 link: "https://www.youtube.com/watch?v=KWoJgHFYWxY"
 
 simultaniously I use information about the algorithm from "algorithmicbotany.org" where they describe the different patterns and formulas you have to use in order to get the wished result
