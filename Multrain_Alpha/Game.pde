@@ -47,7 +47,7 @@ class Game {
     
     for (int i = 0;i < num.length; i++){    //Using the boolean for collision defined in the number class, to play a sound when the playermodel collided with a number
       if(num[i].col == true){
-        colSound.play();
+        //colSound.play();
         num[i].col = false;
       }
     }
@@ -88,7 +88,7 @@ class Game {
         text("You reached "+counter+"!", width/2, height/1.2+30);
         
         if(phyl.getR() == 40){    //using the phyllotaxis radius as an indicator for when to play the winning sound
-        winSound.play();
+        //winSound.play();
         }
       if(phyl.getR() == 220){    //using the phyllotaxis radius as an indicator for when to stop the game and go back to the start screen
         start = null;    //setting every object and vaiable back to null
@@ -126,7 +126,7 @@ class Game {
         text("Time is up", width/2, height/1.2-10);
         text("You reached "+counter+"!", width/2, height/1.2+30);
         if(phyl.getR() == 40){
-         timeIsUp.play(); 
+         //timeIsUp.play(); 
         }
 
       if(phyl.r >= 240){

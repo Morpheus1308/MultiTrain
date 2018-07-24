@@ -12,9 +12,9 @@ Special thanks to..
             ..my teacher Kasper Kristensen, for helping me with the background, including the idea with the double array!
             ..to Daniel Shiffman and his Youtube Channel "Coding Rainbow" for further eduaction in matters of using Arrays and Vectors - Furthermore for his video about Phyllotaxis!
 */
-import processing.sound.*;    //Importing a sound Library, in order to use the soundfiles in a proper way
+//import processing.sound.*;    //Importing a sound Library, in order to use the soundfiles in a proper way
 
-  SoundFile colSound, winSound, timeIsUp;   //Soundfiles, used later in the program
+  //SoundFile colSound, winSound, timeIsUp;   //Soundfiles, used later in the program
   Screen start;   //variable declaration - start Screen
   Game game;   // the Game
   Points score;    //handles the overall score
@@ -33,9 +33,9 @@ void setup(){   //initiation of the first block of code, only running once
   font = createFont("Arciform.otf", 32);   //defining the font 
   dif = 1;   // setting the difficultz to 1 - which means amateur
   
-  colSound = new SoundFile(this, "bubble.WAV");  //Using the imported sound library to initialize and define the sound
-  winSound = new SoundFile(this, "winning.WAV");
-  timeIsUp = new SoundFile(this, "timeisup.WAV");
+  //colSound = new SoundFile(this, "bubble.WAV");  //Using the imported sound library to initialize and define the sound
+  //winSound = new SoundFile(this, "winning.WAV");
+  //timeIsUp = new SoundFile(this, "timeisup.WAV");
 }
 
 void draw(){  //Processing specific funktion, running as a loop
